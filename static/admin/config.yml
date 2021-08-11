@@ -10,10 +10,6 @@ collections:
     label: "Blog"
     folder: "content/blog"
     create: true
-    slug: "index"
-    media_folder: ""
-    public_folder: ""
-    path: "{{title}}/index"
     editor:
       preview: true
     fields:
@@ -21,12 +17,3 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "settings"
-    label: "Setting"
-    files:
-      - label: "Contact Info"
-        name: contact_info
-        file: site/settings/contact_info.json
-        fields:
-          - { label: "Phone", name: "phone", widget: "string", required: false }
-          - { label: "Email", name: "email", widget: "string", required: false }
