@@ -11,16 +11,7 @@ body{
 }
 /* nav  */
 
-nav {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  text-transform: uppercase;
-}
+
 
 .menu-item {
   flex: 1;
@@ -138,7 +129,7 @@ img {
 
 .prev, .next{
   font-weight: 600;
-  font-weight: 600;
+  cursor: pointer;
 }
 
 

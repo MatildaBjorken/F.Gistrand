@@ -1,34 +1,29 @@
 import React, { useState, useRef, useEffect } from "react"
 import { gsap, TweenLite, Power3 } from "gsap/all"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 //Components
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Index = () => {
   gsap.registerPlugin(TweenLite, Power3, ScrollTrigger)
   const testimonials = [
     {
-      name: "Julia Cameron",
+      name: "Collection",
       title: "001",
       image: `${require("./images/filippa.jpg").default}`,
-      quote:
-        "It's all good. I was amazed at the quality of the Design. We've seen amazing results already.",
     },
     {
-      name: "Mark Jacobs",
+      name: "Quality",
       title: "002",
       image: `${require("./images/filippa.jpg").default}`,
-      quote:
-        "The rebranding has really helped our business. Definitely worth the investment.",
     },
     {
-      name: "Lisa Bearings",
+      name: "Texture",
       title: "003",
       image: `${require("./images/filippa.jpg").default}`,
-      quote:
-        "The service was excellent. Absolutely wonderful! A complete redesign did it for us.",
     },
   ]
 

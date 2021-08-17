@@ -1,30 +1,32 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import PropTypes from "prop-types"
+//Components
+import Header from "./header"
+import "../style.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query bioQueryAndBioQuery {
+  const siteData = useStaticQuery(graphql`
+    query SiteTitleQuery {
       site {
         siteMetadata {
-          social {
-            instagram
-          }
+          title
         }
       }
     }
   `)
 
-  const social = data.site.siteMetadata?.social
-
   return (
     <div className="global-wrapper">
-      <nav></nav>
-
+      <Header siteTitle={siteData.site.siteMetadata.title} />
       <main>{children}</main>
-
       <footer></footer>
     </div>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
