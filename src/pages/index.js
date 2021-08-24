@@ -1,212 +1,60 @@
-import React, { useState, useRef, useEffect } from "react"
-import { gsap, TweenLite, Power3 } from "gsap/all"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-//Components
-
+import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { gsap } from "gsap"
+import Header from "../components/headerTwo"
+import Navigation from "../components/navigation"
+import { Link } from "gatsby"
+import Home from "./test"
 
-const Index = () => {
-  gsap.registerPlugin(TweenLite, Power3, ScrollTrigger)
-  const testimonials = [
-    {
-      name: "Collection",
-      title: "001",
-      image: `${require("./images/filippa.jpg").default}`,
-    },
-    {
-      name: "Quality",
-      title: "002",
-      image: `${require("./images/filippa.jpg").default}`,
-    },
-    {
-      name: "Texture",
-      title: "003",
-      image: `${require("./images/filippa.jpg").default}`,
-    },
-  ]
+const routes = [{ path: "/", name: "Home", Component: Home }]
 
-  let imageList = useRef(null)
-  let testimonialList = useRef(null)
-  const imageWidth = 340
+function debounce(fn, ms) {
+  let timer
+  return () => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      timer = null
+      fn.apply(this, arguments)
+    }, ms)
+  }
+}
 
-  const [state, setState] = useState({
-    isActive1: true,
-    isActive2: false,
-    isActive3: false,
+function Index() {
+  const [dimensions, setDimensions] = useState({
+   
   })
 
   useEffect(() => {
-    TweenLite.to(testimonialList.children[0], 0, {
-      opacity: 1,
-    })
-  }, [])
+    // prevents flashing
+    gsap.to("body", 0, { css: { visibility: "visible" } })
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      })
+    }, 1000)
 
-  //Image transition
-  const slideLeft = (index, duration, multiplied = 1) => {
-    TweenLite.to(imageList.children[index], duration, {
-      x: -imageWidth * multiplied,
-      ease: Power3.easeOut,
-    })
-  }
-
-  const slideRight = (index, duration, multiplied = 1) => {
-    TweenLite.to(imageList.children[index], duration, {
-      x: imageWidth * multiplied,
-      ease: Power3.easeOut,
-    })
-  }
-
-  const scale = (index, duration) => {
-    TweenLite.from(imageList.children[index], duration, {
-      scale: 1.2,
-      ease: Power3.easeOut,
-    })
-  }
-
-  //Content transition
-
-  const fadeOut = (index, duration) => {
-    TweenLite.to(testimonialList.children[index], duration, {
-      opacity: 0,
-    })
-  }
-
-  const fadeIn = (index, duration) => {
-    TweenLite.to(testimonialList.children[index], duration, {
-      opacity: 1,
-      delay: 1,
-    })
-  }
-
-  const nextSlide = () => {
-    if (imageList.children[0].classList.contains("active")) {
-      setState({ isActive1: false, isActive2: true })
-      //Image transition
-      slideLeft(0, 1)
-      slideLeft(1, 1)
-      scale(1, 1)
-      slideLeft(2, 1)
-      slideLeft(2, 0)
-      fadeOut(0, 1)
-      fadeIn(1, 1)
-    } else if (imageList.children[1].classList.contains("active")) {
-      setState({ isActive2: false, isActive3: true })
-      //Image transition
-      slideRight(0, 1)
-      slideLeft(1, 1, 2)
-      slideLeft(2, 1, 2)
-      scale(2, 1)
-      //content transition
-      fadeOut(1, 1)
-      fadeIn(2, 1)
-    } else if (imageList.children[2].classList.contains("active")) {
-      setState({ isActive1: true, isActive3: false })
-      //Image transition
-      slideLeft(2, 1, 3)
-      slideLeft(0, 1, 0)
-      slideLeft(1, 0, 0)
-      scale(0, 1)
-      //content transition
-      fadeOut(2, 1)
-      fadeIn(0, 1)
+    window.addEventListener("resize", debouncedHandleResize)
+    return () => {
+      window.removeEventListener("resize", debouncedHandleResize)
     }
-  }
-
-  const prevSlide = () => {
-    if (imageList.children[0].classList.contains("active")) {
-      setState({ isActive1: false, isActive3: true })
-      //Image transition
-      slideLeft(2, 0, 3)
-      slideLeft(2, 1, 2)
-      scale(2, 1)
-      slideRight(0, 1)
-      slideRight(1, 1)
-      //content transtion
-      fadeOut(0, 1)
-      fadeIn(2, 1)
-    } else if (imageList.children[1].classList.contains("active")) {
-      setState({ isActive2: false, isActive1: true })
-      //Image transition
-      slideLeft(0, 0)
-      slideRight(0, 1, 0)
-      slideRight(1, 1, 0)
-      slideRight(2, 1, 2)
-      scale(0, 1)
-      //content transtion
-      fadeOut(1, 1)
-      fadeIn(0, 1)
-    } else if (imageList.children[2].classList.contains("active")) {
-      setState({ isActive2: true, isActive3: false })
-      slideLeft(2, 1)
-      slideLeft(1, 0, 2)
-      slideLeft(1, 1)
-      scale(1, 1)
-      //content transtion
-      fadeOut(2, 1)
-      fadeIn(1, 1)
-    }
-  }
-
+  })
   return (
-    <Layout>
-      <Seo title="Home" />
-      <div className="header">
-        <h1 className="header-1">Filippa</h1>
-        <h1 className="header-2">Gistrand</h1>
-      </div>
-
-      <div className="testimonial-section">
-        <div className="testimonial-container">
-          <div onClick={nextSlide} className="img-nav">
-            <p className="prev">next</p>
-          </div>
-          <div className="sidebar-text">Refine your image.</div>
-          <div className="inner">
-            <div className="t-image">
-              <ul ref={el => (imageList = el)}>
-                <li className={state.isActive1 ? "active" : ""}>
-                  <img src={testimonials[0].image} alt={testimonials[0].name} />
-                </li>
-                <li className={state.isActive2 ? "active" : ""}>
-                  <img src={testimonials[1].image} alt={testimonials[0].name} />
-                </li>
-                <li className={state.isActive3 ? "active" : ""}>
-                  <img src={testimonials[2].image} alt={testimonials[0].name} />
-                </li>
-              </ul>
+    <>
+      <Layout>
+        <Seo title="Home" />
+        <Header dimensions={dimensions} />
+        <div className="App">
+          {routes.map(({ path, Component }) => (
+            <div key={path} exact path={path}>
+              <Component dimensions={dimensions} />
             </div>
-          </div>
-
-          <div className="img-nav" onClick={prevSlide}>
-            <p className="next">prev</p>
-          </div>
-          <div className="t-content">
-            <ul ref={el => (testimonialList = el)} className="test">
-              <li className={state.isActive1 ? "active" : ""}>
-                <div className="content-inner">
-                  <h3 className="name">{testimonials[0].name}</h3>
-                  <h4 className="title">{testimonials[0].title}</h4>
-                </div>
-              </li>
-              <li className={state.isActive2 ? "active" : ""}>
-                <div className="content-inner">
-                  <h3 className="name">{testimonials[1].name}</h3>
-                  <h4 className="title">{testimonials[1].title}</h4>
-                </div>
-              </li>
-              <li className={state.isActive3 ? "active" : ""}>
-                <div className="content-inner">
-                  <h3 className="name">{testimonials[2].name}</h3>
-                  <h4 className="title">{testimonials[2].title}</h4>
-                </div>
-              </li>
-            </ul>
-          </div>
+          ))}
         </div>
-      </div>
-    </Layout>
+        <Navigation />
+      </Layout>
+    </>
   )
 }
 

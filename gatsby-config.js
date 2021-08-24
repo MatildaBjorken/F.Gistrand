@@ -11,6 +11,30 @@ module.exports = {
       instagram: `kylemathews`,
     },
   },
+
+  plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
+  ],
+
+  plugins: [`gatsby-plugin-sass`],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
+  ],
+
   plugins: [
     `gatsby-plugin-image`,
     {

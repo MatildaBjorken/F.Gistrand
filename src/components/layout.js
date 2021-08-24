@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 //Components
-import Header from "./header"
-import "../style.css"
+import Header from "./headerTwo"
+import "../App.css"
 
 const Layout = ({ children }) => {
   const siteData = useStaticQuery(graphql`
@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="global-wrapper">
-      <Header siteTitle={siteData.site.siteMetadata.title} />
+      <Header />
       <main>{children}</main>
       <footer></footer>
     </div>
