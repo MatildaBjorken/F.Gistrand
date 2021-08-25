@@ -11,7 +11,7 @@
 
 .main .row h2 {
   font-size: 3rem;
-  line-height: 4.2rem;
+  line-height: 4.8rem;
   font-weight: 700;
   z-index: 10;
   color: white;
@@ -64,7 +64,7 @@
 @media only screen and (max-width: 768px) {
   .main .row h2 {
     font-size: 2.4rem;
-    line-height: 3rem;
+    line-height: 3.5rem;
   }
 
   .main .row h2 .line {

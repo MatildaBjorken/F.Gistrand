@@ -6,9 +6,9 @@ export const openMenu = width => {
   tl.to("nav", 0, {
     css: { display: "block" }
   })
-    .to("body", 0, { css: { overflow: "hidden" } })
+    .to("body", 0, { css: {  } })
     .to(".App", 1, {
-      y: width <= 654 ? "100vh" : window.innerHeight / 2,
+      y: width <= 654 ? "80vh" : "80vh" ,
       ease: "expo.inOut"
     })
     .to(".hamburger-menu span", 0.6, {

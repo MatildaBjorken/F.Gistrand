@@ -1,15 +1,21 @@
-import React from "react";
+import React from "react"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 const About = () => {
   return (
-    <div className='page'>
-      <div className='container'>
-        <div className='row'>
-          <h3>This is the About page</h3>
+    <Layout>
+      <div className="App">
+        <div className="page">
+          <div className="container">
+            <div className="row">
+              <h3>This is the About page</h3>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </Layout>
+  )
+}
 
-export default About;
+export default About

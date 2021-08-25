@@ -3,19 +3,19 @@ import React from "react";
 const caseStudies = [
   {
     id: 1,
-    subtitle: "Curology",
+    subtitle: "001",
     title: "A custom formula for your skin’s unique needs",
     img: "filippa"
   },
   {
     id: 2,
-    subtitle: "Yourspace",
+    subtitle: "002",
     title: "Open space floor plans for you next venture",
     img: "filippatwo"
   },
   {
     id: 3,
-    subtitle: "Lumin",
+    subtitle: "003",
     title: "For your best look ever",
     img: "filippa"
   }
