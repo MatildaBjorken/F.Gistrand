@@ -4,10 +4,15 @@ import Seo from "../components/seo"
 import { gsap } from "gsap"
 import Header from "../components/headerTwo"
 import Navigation from "../components/navigation"
-import { Link } from "gatsby"
 import Home from "./test"
+import Blog from "./blog"
+import About from './about';
+import { Link } from "gatsby"
 
-const routes = [{ path: "/", name: "Home", Component: Home }]
+const routes = [
+  { path: "/", name: "Home", Component: Home },
+ 
+]
 
 function debounce(fn, ms) {
   let timer
@@ -21,9 +26,7 @@ function debounce(fn, ms) {
 }
 
 function Index() {
-  const [dimensions, setDimensions] = useState({
-   
-  })
+  const [dimensions, setDimensions] = useState({})
 
   useEffect(() => {
     // prevents flashing
@@ -47,9 +50,9 @@ function Index() {
         <Header dimensions={dimensions} />
         <div className="App">
           {routes.map(({ path, Component }) => (
-            <div key={path} exact path={path}>
-              <Component dimensions={dimensions} />
-            </div>
+            <Link key={path} exact path={path}>
+              <Component  />
+            </Link>
           ))}
         </div>
         <Navigation />

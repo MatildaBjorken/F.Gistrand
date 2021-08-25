@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 const Navigation = () => {
-  
   return (
     <nav>
       <div className="container">
@@ -11,7 +10,8 @@ const Navigation = () => {
             <ul className="nav-links">
               <li>
                 <Link
-                  target="#"
+                  to="/blog"
+                  exact
                   href="https://www.instagram.com/igor_dumencic/"
                 >
                   Blog
@@ -19,7 +19,8 @@ const Navigation = () => {
               </li>
               <li>
                 <Link
-                  target="#"
+                  to='/about'
+                  exact
                   href="https://www.instagram.com/igor_dumencic/"
                 >
                   About
@@ -27,7 +28,8 @@ const Navigation = () => {
               </li>
               <li>
                 <Link
-                  target="#"
+                  to="#"
+                  exact
                   href="https://www.instagram.com/igor_dumencic/"
                 >
                   Shop
@@ -35,7 +37,8 @@ const Navigation = () => {
               </li>
               <li>
                 <Link
-                  target="#"
+                  to="#"
+                  exact
                   href="https://www.instagram.com/igor_dumencic/"
                 >
                   Contact
@@ -50,7 +53,8 @@ const Navigation = () => {
                 <li className="nav-info-label">Email</li>
                 <li>
                   <Link
-                    target="#"
+                    to="#"
+                    exact
                     href="https://www.instagram.com/igor_dumencic/"
                   >
                     Instagram
@@ -58,7 +62,8 @@ const Navigation = () => {
                 </li>
                 <li>
                   <Link
-                    target="#"
+                    to="#"
+                    exact
                     href="https://www.instagram.com/igor_dumencic/"
                   >
                     Instagram
@@ -77,7 +82,7 @@ const Navigation = () => {
               </ul>
               <ul className="nav-info">
                 <li className="nav-info-label">Legal</li>
-                <li>Privacy & Cookies</li>
+                <li>Privacy and Cookies</li>
               </ul>
             </div>
           </div>

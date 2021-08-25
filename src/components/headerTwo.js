@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { openMenu, closeMenu } from "../animations/menuAnimations"
 import { Link } from "gatsby"
-import UpArrow  from "../svg/up-arrow-circle.svg";
+import UpArrow  from "../assets/arrow";
 
 // Define reducer
+//
 
 const Header = ({ dimensions }) => {
   
@@ -37,7 +38,7 @@ const Header = ({ dimensions }) => {
               className="hamburger-menu-close"
               onClick={() => setMenuState({ menuOpened: false })}
             >
-             
+             <UpArrow/>
             </div>
           </div>
         </div>

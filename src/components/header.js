@@ -91,40 +91,8 @@ const Header = () => {
   const [toggle, toggleNav] = useState(false)
   return (
     <>
-      <Nav>
-        <Logo>blog</Logo>
-        <Menu>
-          <Item>
-            <Link target="#" href="https://github.com/Igor178">
-              Filippa Gistrand
-            </Link>
-          </Item>
-        </Menu>
-        <NavIcon onClick={() => toggleNav(!toggle)}>
-          <Line open={toggle} />
-          <Line open={toggle} />
-          <Line open={toggle} />
-        </NavIcon>
-      </Nav>
-      <Overlay open={toggle}>
-        <OverlayMenu open={toggle}>
-          <Item>
-            <Link target="#" href="https://www.instagram.com/igor_dumencic/">
-              Instagram
-            </Link>
-          </Item>
-          <Item>
-            <Link target="#" href="https://www.behance.net/igordumencic">
-              Behance
-            </Link>
-          </Item>
-          <Item>
-            <Link target="#" href="https://github.com/Igor178">
-              Github
-            </Link>
-          </Item>
-        </OverlayMenu>
-      </Overlay>
+     
+
     </>
   )
 }
