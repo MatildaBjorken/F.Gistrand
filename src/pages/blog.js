@@ -1,13 +1,40 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Blogcard from "../components/blogcard"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const allPosts = data.allMarkdownRemark.nodes
+  const postsToDisplay = 6
+  const [posts, setPosts] = useState(allPosts)
+  const [numberOfPosts, setNumberOfPosts] = useState(postsToDisplay)
+  const [filter, setFilter] = useState(
+    new URLSearchParams(location.search.substring(1)).get("filter")
+  )
+
+  useEffect(() => {
+    if (filter) {
+      window.history.pushState(
+        filter,
+        "",
+        `blog?filter=${filter.toLowerCase()}`
+      )
+      document.querySelector("#categories").value = filter.toLowerCase()
+    }
+
+    setPosts(
+      filter === "all" || !filter
+        ? allPosts
+        : allPosts.filter(post =>
+            post.frontmatter.tags.includes(
+              filter[0].toUpperCase() + filter.substring(1)
+            )
+          )
+    )
+  }, [filter, allPosts])
 
   if (posts.length === 0) {
     return (
@@ -22,39 +49,29 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout>
       <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+      <div className="App">
+      <div className="page">
+        <div className="blog">
+          <ol className="blog-grid">
+            {posts.slice(0, numberOfPosts).map(post => (
+              <Blogcard
+                key={post.fields.slug}
+                post={post}
+                setFilter={setFilter}
+              />
+            ))}
+          </ol>
+          {numberOfPosts < posts.length && (
+            <button
+              className="cta-btn"
+              onClick={() => setNumberOfPosts(numberOfPosts + postsToDisplay)}
+            >
+              View more posts
+            </button>
+          )}
+        </div>
+        </div>
+      </div>
     </Layout>
   )
 }

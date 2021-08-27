@@ -3,8 +3,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Home from "./test"
 
-
-const routes = [{ path: "/", name: "Home", Component: Home }]
 function Index() {
   return (
     <>

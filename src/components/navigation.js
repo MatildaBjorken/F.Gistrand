@@ -19,7 +19,6 @@ const Navigation = () => {
               <li>
                 <Link
                   to='/about'
-                  exact
                   href="https://www.instagram.com/igor_dumencic/"
                 >
                   About
