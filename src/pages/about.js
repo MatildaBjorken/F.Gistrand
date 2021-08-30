@@ -1,38 +1,33 @@
 import React, { useState, useRef, useEffect } from "react"
-import { gsap, TweenLite, Power3 , TimelineLite ,TweenMax} from "gsap/all"
+import { gsap, TweenLite, Power3, TimelineLite, TweenMax } from "gsap/all"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Filippa from '../images/filippa.jpg'
+import Filippa from "./images/filippa.jpg"
 
 import "../styles/components/about.css"
 
-
 const About = () => {
+  gsap.registerPlugin(TweenLite, Power3, ScrollTrigger, TimelineLite, TweenMax)
 
-  gsap.registerPlugin(TweenLite, Power3, ScrollTrigger, TimelineLite ,TweenMax)
-  
   const testimonials = [
     {
       name: "Collection",
       title: "001",
-      image: `${require("./images/filippa.jpg").default}`,
-      quote:
-      "The service was excellent. Absolutely wonderful! A complete redesign did it for us."
+      image: `${require("../images/photo.jpg").default}`,
+      quote: "As individual as you.",
     },
     {
       name: "Quality",
       title: "002",
-      image: `${require("./images/filippa.jpg").default}`,
-      quote:
-      "The service was excellent. Absolutely wonderful! A complete redesign did it for us."
+      image: `${require("../images/photo2.jpg").default}`,
+      quote: "Dress good, you deserve it",
     },
     {
       name: "Texture",
       title: "003",
-      image: `${require("./images/filippa.jpg").default}`,
-      quote:
-      "The service was excellent. Absolutely wonderful! A complete redesign did it for us."
+      image: `${require("../images/photo3.jpg").default}`,
+      quote: "Expect more from your clothes.",
     },
   ]
 
@@ -162,58 +157,65 @@ const About = () => {
     <Layout>
       <div className="App">
         <div className="page">
-        <div className="testimonial-section">
-      <div className="testimonial-container">
-        <div onClick={prevSlide} className="arrows left">
-          <span>
-            prev
-          </span>
-        </div>
-        <div className="inner">
-          <div className="t-image">
-            <ul ref={el => (imageList = el)}>
-              <li className={state.isActive1 ? "active" : ""}>
-                <img src={testimonials[0].image} alt={testimonials[0].name} />
-              </li>
-              <li className={state.isActive2 ? "active" : ""}>
-                <img src={testimonials[1].image} alt={testimonials[0].name} />
-              </li>
-              <li className={state.isActive3 ? "active" : ""}>
-                <img src={testimonials[2].image} alt={testimonials[0].name} />
-              </li>
-            </ul>
+          <div className="testimonial-section">
+            <div className="testimonial-container">
+              <div onClick={prevSlide} className="arrows left">
+                <p className="prev">prev</p>
+              </div>
+              <div className="inner">
+                <div className="t-image">
+                  <ul ref={el => (imageList = el)}>
+                    <li className={state.isActive1 ? "active" : ""}>
+                      <img
+                        src={testimonials[0].image}
+                        alt={testimonials[0].name}
+                      />
+                    </li>
+                    <li className={state.isActive2 ? "active" : ""}>
+                      <img
+                        src={testimonials[1].image}
+                        alt={testimonials[0].name}
+                      />
+                    </li>
+                    <li className={state.isActive3 ? "active" : ""}>
+                      <img
+                        src={testimonials[2].image}
+                        alt={testimonials[0].name}
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <div className="t-content">
+                  <ul ref={el => (testimonialList = el)}>
+                    <li className={state.isActive1 ? "active" : ""}>
+                      <div className="content-inner">
+                        <p className="quote">{testimonials[0].quote}</p>
+                        <h3 className="name">{testimonials[0].name}</h3>
+                        <h4 className="title">{testimonials[0].title}</h4>
+                      </div>
+                    </li>
+                    <li className={state.isActive2 ? "active" : ""}>
+                      <div className="content-inner">
+                        <p className="quote">{testimonials[1].quote}</p>
+                        <h3 className="name">{testimonials[1].name}</h3>
+                        <h4 className="title">{testimonials[1].title}</h4>
+                      </div>
+                    </li>
+                    <li className={state.isActive3 ? "active" : ""}>
+                      <div className="content-inner">
+                        <p className="quote">{testimonials[2].quote}</p>
+                        <h3 className="name">{testimonials[2].name}</h3>
+                        <h4 className="title">{testimonials[2].title}</h4>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="arrows right" onClick={nextSlide}>
+                <p className="prev next">next</p>
+              </div>
+            </div>
           </div>
-          <div className="t-content">
-            <ul ref={el => (testimonialList = el)}>
-              <li className={state.isActive1 ? "active" : ""}>
-                <div className="content-inner">
-                  <p className="quote">{testimonials[0].quote}</p>
-                  <h3 className="name">{testimonials[0].name}</h3>
-                  <h4 className="title">{testimonials[0].title}</h4>
-                </div>
-              </li>
-              <li className={state.isActive2 ? "active" : ""}>
-                <div className="content-inner">
-                  <p className="quote">{testimonials[1].quote}</p>
-                  <h3 className="name">{testimonials[1].name}</h3>
-                  <h4 className="title">{testimonials[1].title}</h4>
-                </div>
-              </li>
-              <li className={state.isActive3 ? "active" : ""}>
-                <div className="content-inner">
-                  <p className="quote">{testimonials[2].quote}</p>
-                  <h3 className="name">{testimonials[2].name}</h3>
-                  <h4 className="title">{testimonials[2].title}</h4>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="arrows right" onClick={nextSlide}>
-          next
-        </div>
-      </div>
-    </div>
         </div>
       </div>
     </Layout>

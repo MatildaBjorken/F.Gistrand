@@ -11,7 +11,7 @@ const Navigation = () => {
               <li>
                 <Link
                   to="/blog"
-                  href="https://www.instagram.com/igor_dumencic/"
+                 
                 >
                   Blog
                 </Link>
@@ -19,7 +19,7 @@ const Navigation = () => {
               <li>
                 <Link
                   to='/about'
-                  href="https://www.instagram.com/igor_dumencic/"
+              
                 >
                   About
                 </Link>
@@ -32,27 +32,19 @@ const Navigation = () => {
                   Shop
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="#"
-                  href="https://www.instagram.com/igor_dumencic/"
-                >
-                  Contact
-                </Link>
-              </li>
             </ul>
           </div>
           <div className="nav-column">
             <div className="nav-label">Contact</div>
             <div className="nav-infos">
               <ul className="nav-info">
-                <li className="nav-info-label">Email</li>
+                <li className="nav-info-label">Get in contact </li>
                 <li>
                   <Link
                     to="#"
                     href="https://www.instagram.com/igor_dumencic/"
                   >
-                    Get in contact 
+                    Email
                   </Link>
                 </li>
                 <li>
@@ -65,9 +57,8 @@ const Navigation = () => {
                 </li>
               </ul>
               <ul className="nav-info">
-                <li className="nav-info-label">Headquarter</li>
-                <li>Route du Jura 49</li>
-                <li>1700 Fribourg</li>
+                <li className="nav-info-label">Location</li>
+                <li>Sweden, Stockholm</li>
                 <li>Stockholm</li>
               </ul>
               <ul className="nav-info">

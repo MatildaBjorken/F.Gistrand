@@ -43,7 +43,7 @@ const homeAnimation = completeAnimation => {
     });
 };
 
-const Home = ({ dimensions }) => {
+const Home = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
 
   const completeAnimation = () => {

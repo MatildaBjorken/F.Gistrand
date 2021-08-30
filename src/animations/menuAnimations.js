@@ -8,7 +8,7 @@ export const openMenu = width => {
   })
     .to("body", 0, { css: {  } })
     .to(".App", 1, {
-      y: width <= 454 ? "80vh" : "90vh" ,
+      y: width <= 454 ? "80vh" : "80vh" ,
       ease: "expo.inOut"
     })
     .to(".hamburger-menu span", 0.6, {

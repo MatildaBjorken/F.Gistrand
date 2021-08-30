@@ -29,7 +29,7 @@ html {
 
 .container .row {
   display: flex;
-  height: 100%;
+  height: 110%;
   padding: 0 32px;
 }
 
