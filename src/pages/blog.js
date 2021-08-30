@@ -10,31 +10,7 @@ const BlogIndex = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.nodes
   const postsToDisplay = 6
   const [posts, setPosts] = useState(allPosts)
-  const [numberOfPosts, setNumberOfPosts] = useState(postsToDisplay)
-  const [filter, setFilter] = useState(
-    new URLSearchParams(location.search.substring(1)).get("filter")
-  )
-
-  useEffect(() => {
-    if (filter) {
-      window.history.pushState(
-        filter,
-        "",
-        `blog?filter=${filter.toLowerCase()}`
-      )
-      document.querySelector("#categories").value = filter.toLowerCase()
-    }
-
-    setPosts(
-      filter === "all" || !filter
-        ? allPosts
-        : allPosts.filter(post =>
-            post.frontmatter.tags.includes(
-              filter[0].toUpperCase() + filter.substring(1)
-            )
-          )
-    )
-  }, [filter, allPosts])
+ 
 
   if (posts.length === 0) {
     return (
@@ -52,23 +28,19 @@ const BlogIndex = ({ data, location }) => {
       <div className="App">
       <div className="page">
         <div className="blog">
-          <ol className="blog-grid">
-            {posts.slice(0, numberOfPosts).map(post => (
-              <Blogcard
-                key={post.fields.slug}
-                post={post}
-                setFilter={setFilter}
-              />
-            ))}
-          </ol>
-          {numberOfPosts < posts.length && (
-            <button
-              className="cta-btn"
-              onClick={() => setNumberOfPosts(numberOfPosts + postsToDisplay)}
-            >
-              View more posts
-            </button>
-          )}
+        <ol className="blog-grid">
+                 {posts.map(post => (
+                     <Blogcard post={post}/>
+                 ))}
+             </ol>
+             {/* <ol style={{ listStyle: `none` }}>
+                 {posts.map(post => {
+                     const title = post.frontmatter.title || post.fields.slug
+ @@ -54,7 +57,7 @@ function Blog({ data, location }) {
+                         </li>
+                     )
+                 })}
+             </ol> */}
         </div>
         </div>
       </div>
@@ -79,24 +51,20 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
+query {
+  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    nodes {
+      excerpt
+      fields {
+        slug
       }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        featuredimage
       }
     }
   }
+}
 `
