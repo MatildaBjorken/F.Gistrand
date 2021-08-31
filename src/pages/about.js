@@ -3,8 +3,6 @@ import { gsap, TweenLite, Power3, TimelineLite, TweenMax } from "gsap/all"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Filippa from "./images/filippa.jpg"
-
 import "../styles/components/about.css"
 
 const About = () => {
@@ -155,6 +153,7 @@ const About = () => {
 
   return (
     <Layout>
+      <Seo title="About" />
       <div className="App">
         <div className="page">
           <div className="testimonial-section">

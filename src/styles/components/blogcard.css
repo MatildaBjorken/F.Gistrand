@@ -15,12 +15,10 @@
     --spacing-xxs: 0.9375rem;
     /* 15px - Padding top and bottom on navbar */
   
-  
     --font: 'Source Sans Pro', sans-serif;
     --fontWeight-normal: 400;
     --fontWeight-semibold: 600;
     --fontWeight-bold: 700;
-  
     --lineHeight-large: 2;
     --lineHeight: 1.5;
     --fontSize-root: 16px;
@@ -78,7 +76,6 @@ main .blog {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
     position: relative;
     max-width: 480px;
-  
 }
 
 .blog-card img {
