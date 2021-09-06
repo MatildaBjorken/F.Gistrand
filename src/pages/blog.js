@@ -27,8 +27,12 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="All posts" />
       <div className="App">
       <div className="page">
-        <div className="blog">
-        <ol className="blog-grid">
+        <div className="blog layout">
+          <div className="left">test
+            jhjhj
+            jkjk
+          </div>
+        <ol className="blog-grid list">
                  {posts.map(post => (
                      <Blogcard post={post}/>
                  ))}
