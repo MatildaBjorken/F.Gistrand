@@ -10,7 +10,6 @@ const BlogIndex = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.nodes
   const postsToDisplay = 6
   const [posts, setPosts] = useState(allPosts)
- 
 
   if (posts.length === 0) {
     return (
@@ -25,19 +24,32 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout>
       <Seo title="All posts" />
+
       <div className="App">
-      <div className="page">
-        <div className="blog layout">
-          <div className="left">test
-            jhjhj
-            jkjk
-          </div>
-        <ol className="blog-grid list">
-                 {posts.map(post => (
-                     <Blogcard post={post}/>
-                 ))}
-             </ol>
-             {/* <ol style={{ listStyle: `none` }}>
+        <div className="">
+          <div className="blog layout">
+            <div className="left">
+              <div className="sticky">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
+                  facilisi. Nunc ac mi tempor, maximus dolor venenatis, rhoncus
+                  nisi. Donec egestas viverra quam, non auctor tortor facilisis
+                  venenatis. Morbi tristique malesuada risus vitae hendrerit.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
+                  facilisi. Nunc ac mi tempor,
+                </p>
+              </div>
+            </div>
+            <ol className="blog-grid list">
+              {posts.map(post => (
+                <Blogcard post={post} />
+              ))}
+            </ol>
+            {/* <ol style={{ listStyle: `none` }}>
                  {posts.map(post => {
                      const title = post.frontmatter.title || post.fields.slug
  @@ -54,7 +57,7 @@ function Blog({ data, location }) {
@@ -45,7 +57,7 @@ const BlogIndex = ({ data, location }) => {
                      )
                  })}
              </ol> */}
-        </div>
+          </div>
         </div>
       </div>
     </Layout>
@@ -55,20 +67,20 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-query {
-  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-    nodes {
-      excerpt
-      fields {
-        slug
-      }
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        featuredimage
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          featuredimage
+        }
       }
     }
   }
-}
 `

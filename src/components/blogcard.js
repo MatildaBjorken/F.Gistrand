@@ -9,19 +9,18 @@ function Blogcard({ post }) {
   return (
     <li className="blog-card" data-aos="fade-up">
       <img src={featuredimage} alt="blogpost"></img>
+    
       <div className="text">
+      <p>{date}</p>
         <Link to={post.fields.slug}>
           <h2>{title}</h2>
         </Link>
-        <p>{date}</p>
+
         <p
           className="description"
           dangerouslySetInnerHTML={{ __html: description || post.excerpt }}
         ></p>
       </div>
-      <Link to={post.fields.slug} className="read-more">
-        Read more
-      </Link>
     </li>
   )
 }
