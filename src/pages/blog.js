@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Blogcard from "../components/blogcard"
+import Line from "../images/line.svg"
 
 const BlogIndex = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.nodes
@@ -24,24 +25,26 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout>
       <Seo title="All posts" />
-
       <div className="App">
         <div className="">
           <div className="blog layout">
             <div className="left">
+              <p className="sticky-header">latest blogs</p>
               <div className="sticky">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
                   facilisi. Nunc ac mi tempor, maximus dolor venenatis, rhoncus
-                  nisi. Donec egestas viverra quam, non auctor tortor facilisis
-                  venenatis. Morbi tristique malesuada risus vitae hendrerit.
+                  nisi. Donec egestas viverra quam, non auctor 
                 </p>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
                   facilisi. Nunc ac mi tempor,
                 </p>
+              </div>
+              <div className='sticky-line'>
+              <img src={Line} className='sticky-img'/>xxx
               </div>
             </div>
             <ol className="blog-grid list">

@@ -38,7 +38,7 @@
 
 .blog {
     background: #F1EDE4;
-  
+
     padding: 0 32px;
 }
 
@@ -61,12 +61,30 @@ ol {
     grid-area: test;
 }
 
-.left-sticky {
+.sticky-line {
     text-align: left;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-auto-rows: auto;
-    grid-gap: var(--spacing-xs);
+    width: 100%;
+    left: 0;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 90%;
+}
+
+.sticky-header {
+    text-align: left;
+    font-size: 2rem;
+    width: 100%;
+    left: 0;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 20%;
+}
+
+.sticky-img {
+    width: 80%;
+    margin-right: 10px;
 }
 
 .sticky {
@@ -74,16 +92,13 @@ ol {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-auto-rows: auto;
-    grid-gap: var(--spacing-xs);
-
+    grid-gap: 1em;
     width: 100%;
-
     left: 0;
-
-
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
+    /* Safari */
     position: sticky;
-    top: 15%;
+    top: 50%;
 }
 
 a {
@@ -172,8 +187,21 @@ select:focus {
     outline: none;
 }
 
-@media only screen and (max-width: 768px) {
-    .blog-grid {}
+@media only screen and (max-width: 968px) {
+    .sticky {
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-auto-rows: auto;
+        grid-gap: 0em;
+        width: 100%;
+        left: 0;
+        position: -webkit-sticky;
+        /* Safari */
+        position: sticky;
+        top: 30%;
+
+    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -191,10 +219,49 @@ select:focus {
     }
 
     .blog-grid {
-        padding-top: 7em;
+        padding-top: 5em;
 
     }
 
-    .blog-grid {}
+    .blog {
+        text-align: center;
+        display: block;
+        grid-template-columns: none;
+        grid-template-rows: auto;
+    }
+
+    .sticky {
+        text-align: left;
+        display: block;
+
+        width: 100%;
+        left: 0;
+        position: inital;
+        top: 30%;
+
+    }
+
+    .sticky p{
+        
+    }
+
+    .sticky-line {
+        text-align: left;
+        width: 100%;
+        left: 0;
+
+        position: initial;
+        margin-top: 3em;
+    }
+
+    .sticky-header {
+        text-align: left;
+        font-size: 2rem;
+        width: 100%;
+        left: 0;
+
+        position: initial;
+        top: 20%;
+    }
 
 }
