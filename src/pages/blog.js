@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-
+import PageTransition from "gatsby-plugin-page-transitions"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -23,36 +23,51 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout>
-      <Seo title="All posts" />
-      <div className="App">
-        <div className="">
-          <div className="blog layout">
-            <div className="left">
-              <p className="sticky-header">latest blogs</p>
-              <div className="sticky">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
-                  facilisi. Nunc ac mi tempor, maximus dolor venenatis, rhoncus
-                  nisi. Donec egestas viverra quam, non auctor 
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
-                  facilisi. Nunc ac mi tempor,
-                </p>
+    <PageTransition
+      defaultStyle={{
+        transition: "left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)",
+        left: "100%",
+        position: "absolute",
+        width: "100%",
+      }}
+      transitionStyles={{
+        entering: { left: "0%" },
+        entered: { left: "0%" },
+        exiting: { left: "100%" },
+      }}
+      transitionTime={500}
+    >
+      <Layout>
+        <Seo title="All posts" />
+        <div className="App">
+          <div className="">
+            <div className="blog layout">
+              <div className="left">
+                <h2 className="sticky-header">Latest Blogs</h2>
+                <div className="sticky">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
+                    facilisi. Nunc ac mi tempor, maximus dolor venenatis,
+                    rhoncus nisi. Donec egestas viverra quam, non auctor
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
+                    facilisi. Nunc ac mi tempor,
+                  </p>
+                </div>
+                <div className="sticky-line">
+                  <img src={Line} className="sticky-img" />
+                  xxx
+                </div>
               </div>
-              <div className='sticky-line'>
-              <img src={Line} className='sticky-img'/>xxx
-              </div>
-            </div>
-            <ol className="blog-grid list">
-              {posts.map(post => (
-                <Blogcard post={post} />
-              ))}
-            </ol>
-            {/* <ol style={{ listStyle: `none` }}>
+              <ol className="blog-grid list">
+                {posts.map(post => (
+                  <Blogcard post={post} />
+                ))}
+              </ol>
+              {/* <ol style={{ listStyle: `none` }}>
                  {posts.map(post => {
                      const title = post.frontmatter.title || post.fields.slug
  @@ -54,7 +57,7 @@ function Blog({ data, location }) {
@@ -60,10 +75,11 @@ const BlogIndex = ({ data, location }) => {
                      )
                  })}
              </ol> */}
+            </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </PageTransition>
   )
 }
 

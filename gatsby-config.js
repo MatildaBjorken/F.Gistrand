@@ -13,6 +13,11 @@ module.exports = {
   },
 
   plugins: [
+    'gatsby-plugin-page-transitions'
+  ],
+
+  plugins: [
+    
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

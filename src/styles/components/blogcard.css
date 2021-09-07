@@ -13,32 +13,10 @@
     /* 35px - Spacing between content in sections */
     --spacing-xxs: 0.9375rem;
     /* 15px - Padding top and bottom on navbar */
-
-    --font: 'Source Sans Pro', sans-serif;
-    --fontWeight-normal: 400;
-    --fontWeight-semibold: 600;
-    --fontWeight-bold: 700;
-    --lineHeight-large: 2;
-    --lineHeight: 1.5;
-    --fontSize-root: 16px;
-    --fontSize-h1: 2rem;
-    --fontSize-h2: 1.5rem;
-    --fontSize-h3: 1.5rem;
-    --fontSize-p: 1rem;
-    --fontSize-p-s: 1rem;
-    --fontSize-p-xs: 0.625rem;
-
-    --black: #000000;
-    --white: #FFFFFF;
-    --dark-grey: #4E4E4E;
-    --light-grey: #F6F6F6;
-    --dark-blue: #00446E;
-    --light-blue: #81AECC;
 }
 
 .blog {
     background: #F1EDE4;
-
     padding: 0 32px;
 }
 
@@ -66,7 +44,6 @@ ol {
     width: 100%;
     left: 0;
     position: -webkit-sticky;
-    /* Safari */
     position: sticky;
     top: 90%;
 }
@@ -77,7 +54,6 @@ ol {
     width: 100%;
     left: 0;
     position: -webkit-sticky;
-    /* Safari */
     position: sticky;
     top: 20%;
 }
@@ -96,12 +72,16 @@ ol {
     width: 100%;
     left: 0;
     position: -webkit-sticky;
-    /* Safari */
     position: sticky;
     top: 50%;
 }
 
+.blog-post h1{
+    margin-top: 3em;
+}
+
 a {
+    color: black;
     text-decoration: none;
 }
 
@@ -112,13 +92,11 @@ main .blog {
 
 .blog-grid {
     list-style-type: none;
-
-
 }
 
 .blog-grid {
+    margin-top: 3em;
     list-style-type: none;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: auto;
@@ -143,20 +121,10 @@ main .blog {
     text-align: left;
 }
 
-.blog-card .text button {
-    background-color: var(--white);
-    color: var(--dark-grey);
-    border: none;
-}
-
-.blog-card .text button:hover {
-    text-decoration: underline;
-}
-
 .blog-card .text h2 {
     color: black;
     text-decoration: none;
-    font-size: var(--fontSize-h3);
+    font-size: 1.3rem
 }
 
 .blog-card .text p {
@@ -164,8 +132,8 @@ main .blog {
 }
 
 .blog-card .text .description {
-    font-size: var(--fontSize-p-s);
-    color: var(--black)
+    font-size: 1rem;
+    color: black;
 }
 
 .blog-card .read-more {
@@ -180,13 +148,6 @@ main .blog {
     margin-top: var(--spacing-s);
 }
 
-
-
-select:focus {
-    box-shadow: none;
-    outline: none;
-}
-
 @media only screen and (max-width: 968px) {
     .sticky {
         text-align: left;
@@ -197,7 +158,6 @@ select:focus {
         width: 100%;
         left: 0;
         position: -webkit-sticky;
-        /* Safari */
         position: sticky;
         top: 30%;
 
@@ -207,7 +167,10 @@ select:focus {
 @media only screen and (max-width: 425px) {
     .blog-card {
         margin: 0;
+    }
 
+    .blog-post h1{
+        padding-top: 1em;
     }
 
     .blog {
@@ -220,7 +183,6 @@ select:focus {
 
     .blog-grid {
         padding-top: 5em;
-
     }
 
     .blog {
@@ -230,36 +192,36 @@ select:focus {
         grid-template-rows: auto;
     }
 
+    .left{
+        padding: 0 32px;
+        padding-top: 6em;
+    }
+
     .sticky {
+     
+
         text-align: left;
         display: block;
-
         width: 100%;
         left: 0;
-        position: inital;
+        position: initial;
         top: 30%;
-
     }
 
-    .sticky p{
-        
-    }
+    .sticky p {}
 
     .sticky-line {
         text-align: left;
         width: 100%;
         left: 0;
-
         position: initial;
-        margin-top: 3em;
     }
 
     .sticky-header {
         text-align: left;
-        font-size: 2rem;
+        font-size: 1.5rem;
         width: 100%;
         left: 0;
-
         position: initial;
         top: 20%;
     }
