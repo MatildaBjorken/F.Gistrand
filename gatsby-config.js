@@ -12,6 +12,19 @@ module.exports = {
     },
   },
 
+
+  plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        javascriptEnabled: true,
+        modifyVars: {
+          "primary-color": "#00BFA6",
+        },
+      },
+    },
+  ],
   plugins: [
     'gatsby-plugin-page-transitions'
   ],

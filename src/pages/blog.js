@@ -25,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <PageTransition
       defaultStyle={{
-        transition: "left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)",
+        transition: "left 1500ms cubic-bezier(0.47, 0, 0.75, 0.72)",
         left: "100%",
         position: "absolute",
         width: "100%",
@@ -35,7 +35,7 @@ const BlogIndex = ({ data, location }) => {
         entered: { left: "0%" },
         exiting: { left: "100%" },
       }}
-      transitionTime={500}
+      transitionTime={1000}
     >
       <Layout>
         <Seo title="All posts" />
