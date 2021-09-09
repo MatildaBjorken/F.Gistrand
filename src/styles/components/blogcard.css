@@ -55,7 +55,9 @@ ol {
     left: 0;
     position: -webkit-sticky;
     position: sticky;
-    top: 20%;
+    top: 21%;
+
+    text-transform: uppercase;
 }
 
 .sticky-img {
@@ -73,7 +75,7 @@ ol {
     left: 0;
     position: -webkit-sticky;
     position: sticky;
-    top: 50%;
+    top: 65%;
 }
 
 .blog-post h1{
@@ -164,7 +166,7 @@ main .blog {
     }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 625px) {
     .blog-card {
         margin: 0;
     }

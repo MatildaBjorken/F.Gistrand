@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="row">
           <h2>
             <div className="line">
-              <span>Kreativ Modedesigner.</span>
+              <span>Creative Fashiondesigner.</span>
             </div>
             <div className="line">
               <span>Filippa Gistrand</span>
@@ -16,7 +16,7 @@ const Banner = () => {
           </h2>
           <div className="btn-row">
             <a href="/">
-              Läs mer <RightArrow />
+              Read More <RightArrow />
             </a>
           </div>
         </div>

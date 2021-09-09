@@ -23,22 +23,22 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <PageTransition
-      defaultStyle={{
-        transition: "left 1500ms cubic-bezier(0.47, 0, 0.75, 0.72)",
-        left: "100%",
-        position: "absolute",
-        width: "100%",
-      }}
-      transitionStyles={{
-        entering: { left: "0%" },
-        entered: { left: "0%" },
-        exiting: { left: "100%" },
-      }}
-      transitionTime={1000}
-    >
-      <Layout>
-        <Seo title="All posts" />
+    <Layout>
+      <Seo title="All posts" />
+      <PageTransition
+        defaultStyle={{
+          transition: "left 1500ms cubic-bezier(0.47, 0, 0.75, 0.72)",
+          left: "100%",
+          position: "absolute",
+          width: "100%",
+        }}
+        transitionStyles={{
+          entering: { left: "0%" },
+          entered: { left: "0%" },
+          exiting: { left: "100%" },
+        }}
+        transitionTime={1000}
+      >
         <div className="App">
           <div className="">
             <div className="blog layout">
@@ -48,8 +48,7 @@ const BlogIndex = ({ data, location }) => {
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
-                    facilisi. Nunc ac mi tempor, maximus dolor venenatis,
-                    rhoncus nisi. Donec egestas viverra quam, non auctor
+                    facilisi. 
                   </p>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -78,8 +77,8 @@ const BlogIndex = ({ data, location }) => {
             </div>
           </div>
         </div>
-      </Layout>
-    </PageTransition>
+      </PageTransition>
+    </Layout>
   )
 }
 

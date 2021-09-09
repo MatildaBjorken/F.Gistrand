@@ -4,13 +4,13 @@ const caseStudies = [
   {
     id: 1,
     subtitle: "001",
-    title: "A custom formula for your skin’s unique needs",
+    title: "Customade clothing for you",
     img: "filippa"
   },
   {
     id: 2,
     subtitle: "002",
-    title: "Open space floor plans for you next venture",
+    title: "A classic never goes out of style",
     img: "filippatwo"
   },
   {
