@@ -22,6 +22,7 @@
 
 
 .blog {
+    height: calc(var(--vh, 1vh) * 100);
     text-align: center;
     display: grid;
     grid-template-columns: 25% 75%;
@@ -35,7 +36,7 @@ ol {
 }
 
 .left {
-
+    
     grid-area: test;
 }
 
