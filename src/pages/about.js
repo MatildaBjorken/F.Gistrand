@@ -160,7 +160,7 @@ const About = () => {
       <div className="App">
         <div className="page">
           <AboutAnimation/>
-          <ImageText />
+      
           <div className="testimonial-section">
             <div className="testimonial-container">
               <div onClick={prevSlide} className="arrows left">
@@ -227,3 +227,5 @@ const About = () => {
 }
 
 export default About
+
+
