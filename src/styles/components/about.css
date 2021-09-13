@@ -238,6 +238,11 @@
     background-size: cover;
 }
 
+.abouttext{
+    z-index: 999999;
+    background-color: #f0ede4;
+}
+
 
 .clients .clients-container p {
     font-size: 70px;
@@ -282,6 +287,7 @@
 .socials {
     padding: 20px 0;
 }
+
 
 .socials .socials-container {
     display: -webkit-box;

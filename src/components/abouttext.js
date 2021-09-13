@@ -2,7 +2,7 @@ import React from "react"
 
 const AboutText = () => {
   return (
-    <div>
+    <div className='about-text'>
       <div className="section-header">
         <div className="section-header-container">
           <div className="section-title">about</div>
