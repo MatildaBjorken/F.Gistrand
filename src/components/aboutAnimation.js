@@ -13,7 +13,7 @@ const AboutAnimation = () => {
     gsap.from(Left.current, {
       left: "-50%",
       ease: "expo.easeInOut",
-      delay: 1.5,
+      delay: 1,
     })
   })
 
@@ -23,7 +23,7 @@ const AboutAnimation = () => {
     gsap.from(Header.current, {
       left: "-120%",
       ease: "expo.easeInOut",
-      delay: 1.5,
+      delay: 1,
     })
   })
 
@@ -34,7 +34,7 @@ const AboutAnimation = () => {
       y: "60",
       opacity: 0,
       ease: "power2.easeOut",
-      delay: 2,
+      delay: 2.2,
     })
   })
 
@@ -45,7 +45,7 @@ const AboutAnimation = () => {
       y: "60",
       opacity: 0,
       ease: "power2.easeOut",
-      delay: 2.2,
+      delay: 2.4,
     })
   })
 
@@ -56,7 +56,7 @@ const AboutAnimation = () => {
       y: "60",
       opacity: 0,
       ease: "power2.easeOut",
-      delay: 2.4,
+      delay: 2.6,
     })
   })
 
@@ -67,7 +67,7 @@ const AboutAnimation = () => {
       y: "60",
       opacity: 0,
       ease: "power2.easeOut",
-      delay: 2.6,
+      delay: 2.8,
     })
   })
 
@@ -78,7 +78,7 @@ const AboutAnimation = () => {
       y: "60",
       opacity: 0,
       ease: "power2.easeOut",
-      delay: 2,
+      delay: 2.2,
     })
   })
 
@@ -90,7 +90,7 @@ const AboutAnimation = () => {
       ease: "steppedEase.config(1)",
       repeat: -1,
       repeatDelay: 0.2,
-      delay: 2,
+      delay: 2.2,
     })
   })
 

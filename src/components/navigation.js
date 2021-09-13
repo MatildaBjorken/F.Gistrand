@@ -26,7 +26,7 @@ const Navigation = () => {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/shop"
                   href="https://www.instagram.com/igor_dumencic/"
                 >
                   Shop

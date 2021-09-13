@@ -1,25 +1,20 @@
 import React, { useState, useRef, useEffect } from "react"
-import { gsap, TweenLite, Power3, TimelineLite, TweenMax } from "gsap/all"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "../styles/components/about.css"
-import ImageText from "../components/imagetext"
-import AboutAnimation from "../components/aboutAnimation"
 import Images from "../components/images"
 
-const About = () => {
+const Shop = () => {
   return (
     <Layout>
-      <Seo title="About" />
-
+      <Seo title="Shop" />
       <div className="App">
         <div className="page">
-          <AboutAnimation />
+          <Images />
         </div>
       </div>
     </Layout>
   )
 }
 
-export default About
+export default Shop
