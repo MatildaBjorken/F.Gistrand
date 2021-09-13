@@ -1,3 +1,6 @@
+import { gsap, TweenLite, Power3, TimelineLite, TweenMax } from "gsap/all"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 gsap.registerPlugin(TweenLite, Power3, ScrollTrigger, TimelineLite, TweenMax)
 
 const testimonials = [

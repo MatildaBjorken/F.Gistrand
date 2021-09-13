@@ -138,7 +138,7 @@ const AboutAnimation = () => {
         </div>
         <div className="header-text">
           <h1 className="ml12" ref={Header}>
-            gorgeoushe
+            About Me
           </h1>
         </div>
       </div>

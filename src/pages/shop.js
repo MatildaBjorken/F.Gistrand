@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import "../styles/components/about.css"
-import Images from "../components/images"
+import "../styles/components/shop.css"
+
+import AboutAnimation from "../components/aboutAnimation"
 
 const Shop = () => {
   return (
@@ -10,7 +11,7 @@ const Shop = () => {
       <Seo title="Shop" />
       <div className="App">
         <div className="page">
-          <Images />
+          <AboutAnimation />
         </div>
       </div>
     </Layout>
