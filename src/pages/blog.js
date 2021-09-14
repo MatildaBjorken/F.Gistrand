@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import Blogcard from "../components/blogcard"
 import Line from "../images/line.svg"
 
+
 const BlogIndex = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.nodes
   const postsToDisplay = 6

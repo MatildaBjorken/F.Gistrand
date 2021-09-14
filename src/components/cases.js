@@ -5,7 +5,7 @@ const caseStudies = [
     id: 1,
     subtitle: "001",
     title: "Customade clothing for you",
-    img: "filippa"
+    img: "shoe"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const caseStudies = [
     id: 3,
     subtitle: "003",
     title: "For your best look ever",
-    img: "filippa"
+    img: "outfit"
   }
 ];
 

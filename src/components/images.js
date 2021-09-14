@@ -82,49 +82,49 @@ const AboutAnimation = () => {
   })
 
   return (
-    <div class="container-images">
-      <div class="centerbar" ref={Centerbar}>
-        <div class="block-1 centerbar-item" ref={Centerbar}>
-          <div class="block-1-container" ref={Centerbar}>
+    <div className="container-images">
+      <div className="centerbar" ref={Centerbar}>
+        <div className="block-1 centerbar-item" ref={Centerbar}>
+          <div className="block-1-container" ref={Centerbar}>
             <span>produced by cg/'21</span>
           </div>
         </div>
-        <div class="block-2 centerbar-item">
-          <div class="block-2-container">
+        <div className="block-2 centerbar-item">
+          <div className="block-2-container">
             open air show now <br />
             goes digital.
           </div>
         </div>
       </div>
 
-      <div class="header-letters">
-        <div class="header-container">
-          <div class="header-item" ref={HeaderDiv}>F</div>
-          <div class="header-item" ref={HeaderDiv2}>G</div>
+      <div className="header-letters">
+        <div className="header-container">
+          <div className="header-item" ref={HeaderDiv}>F</div>
+          <div className="header-item" ref={HeaderDiv2}>G</div>
         </div>
       </div>
-      <div class="images-animation">
+      <div className="images-animation">
         <div
           ref={Images1}
-          class="image img-one"
+          className="image img-one"
           style={{ backgroundImage: `url(${Image1})` }}
         ></div>
         <div
           ref={Images2}
-          class="image img-two"
+          className="image img-two"
           style={{ backgroundImage: `url(${Image3})` }}
         ></div>
         <div
           ref={Images3}
-          class="image img-three"
+          className="image img-three"
           style={{ backgroundImage: `url(${Image2})` }}
         ></div>
       </div>
-      <div class="bottombar" ref={Bottombar}>
-        <div class="year bottombar-item" ref={Bottombar}>
+      <div className="bottombar" ref={Bottombar}>
+        <div className="year bottombar-item" ref={Bottombar}>
           2021
         </div>
-        <div class="mail bottombar-item" ref={Bottombar}>
+        <div className="mail bottombar-item" ref={Bottombar}>
           get in touch
         </div>
       </div>

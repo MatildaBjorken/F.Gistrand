@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
 import Image from "../images/about1.jpg"
-import Image1 from "../images/about1.jpg"
+import Image1 from "../images/about.jpg"
 import Image2 from "../images/about2.jpg"
 import Image3 from "../images/about3.jpg"
 import Image4 from "../images/about4.jpg"
@@ -138,7 +138,7 @@ const AboutAnimation = () => {
         </div>
         <div className="header-text">
           <h1 className="ml12" ref={Header}>
-            About Me
+            Shop Now
           </h1>
         </div>
       </div>
