@@ -565,60 +565,29 @@
     bottom: 0;
 }
 
-@media (max-width: 990px) {
-    .container-right {
-        width: 100%;
-        height: 100vh;
+@media (max-width: 890px) {
+    .right-bottom-text {
+        font-size: 30px;
+        color: black;
     }
 
-    .container-right {
-        top: 300vh;
-        left: 0;
+    .left-bottom-text {
+        font-size: 30px;
     }
 
-    /* .container-left,
-    .container-right {
-        width: 100%;
-        height: 100vh;
+    .left-img-btn {
+        width: 130px;
+        height: 130px;
+        font-size: 13px;
     }
 
-    .container-right {
-        top: 100vh;
-        left: 0;
-    } */
-
-    .left-img-btn,
-    .social-media {
-        display: none;
+    .left-img-cap{
+        top: 15%;
     }
-}
+    .socials .socials-container a{
+        font-size: 40px;
+    }
 
-.loader {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #000;
-    z-index: 2;
-    overflow: hidden;
-}
-
-.loader marquee {
-    opacity: 0.2;
-    text-transform: uppercase;
-    line-height: 180px;
-    margin: 0;
-    padding: 0;
-    color: #646464;
-    font-size: 200px;
-    font-family: "Cinzel";
-}
-
-.loader .intro {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
 }
 
 .loader .intro h1 {
@@ -635,33 +604,37 @@
 }
 
 
-@media only screen and (max-width: 468px) {
+@media only screen and (max-width: 668px) {
     .container-left {
-        position: initial; 
-        width: 50%; 
+        position: initial;
+        width: auto;
         height: auto;
     }
 
     .left-bottom-text {
         font-size: 28px;
         position: initial;
+        text-align: right;
     }
 
     .container-left-img {
-        position: initial; 
+        position: initial;
         top: auto;
         left: auto;
         transform: initial;
 
     }
+
     .container-right {
-        position: initial;
-        width: initial;
-        height: 50vh;
+        width: 80%;
         left: 50%;
+        height: 70vh;
+        transform: translate(-50%, 0%);
+        height: 70vh
     }
 
     .left-img-cap {
+        padding: 4em;
         position: initial;
         top: auto;
         left: auto;
@@ -670,8 +643,14 @@
     }
 
     .right-bottom-text {
+        padding-top: 10em;
         position: initial;
         bottom: auto;
+        color: white;
+    }
+
+    .whitespace {
+        height: 400px;
     }
 
 
