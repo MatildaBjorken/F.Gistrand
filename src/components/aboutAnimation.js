@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
-import Image from "../images/about1.jpg"
+import Image from "../images/about-main.jpg"
 import Image1 from "../images/about.jpg"
 import Image2 from "../images/about2.jpg"
 import Image3 from "../images/about3.jpg"
@@ -101,7 +101,7 @@ const AboutAnimation = () => {
         className="left-about column"
         style={{ backgroundImage: `url(${Image})` }}
       >
-        <div className="header-text">
+        <div className="header-text header-text-left">
           <p ref={Paragraph}>boundary supply /</p>
           <p ref={Paragraph}>
             better than brand new second hand clothing / focus by sick apparel

@@ -453,20 +453,10 @@
     height: 100vh;
     left: 50%;
     background: no-repeat 50% 50%;
-    background-size: 110%;
-    animation: animatedBackground1 6s cubic-bezier(0.19, 1, 0.22, 1);
-    animation-delay: 5s;
+    background-size: 100%;
+   
 }
 
-@keyframes animatedBackground1 {
-    from {
-        background-size: 460%;
-    }
-
-    to {
-        background-size: 110%;
-    }
-}
 
 .container-left-img {
     position: absolute;
@@ -477,20 +467,11 @@
     height: 350px;
     background: no-repeat 50% 50%;
     background-size: 100%;
-    animation: animatedBackground2 6s cubic-bezier(0.19, 1, 0.22, 1);
-    animation-delay: 5s;
+  
     object-fit: cover;
 }
 
-@keyframes animatedBackground2 {
-    from {
-        background-size: 300%;
-    }
 
-    to {
-        background-size: 100%;
-    }
-}
 
 .left-img-cap {
     position: absolute;
