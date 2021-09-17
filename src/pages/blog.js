@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Blogcard from "../components/blogcard"
 import Line from "../images/line.svg"
-
+import Masonry from "react-masonry-css";
 
 const BlogIndex = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.nodes
@@ -22,6 +22,11 @@ const BlogIndex = ({ data, location }) => {
       </Layout>
     )
   }
+
+  const breakpointColumnsObj = {
+    default: 2,
+    700: 1,
+  };
 
   return (
     <Layout>
@@ -45,28 +50,22 @@ const BlogIndex = ({ data, location }) => {
             <div className="blog layout">
               <div className="left">
                 <h2 className="sticky-header">Latest Blogs</h2>
-                <div className="sticky">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
-                    facilisi. 
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vivamus sit amet faucibus nisi. Ut a pharetra urna. Nulla
-                    facilisi. Nunc ac mi tempor,
-                  </p>
-                </div>
+                
                 <div className="sticky-line">
                   <img src={Line} className="sticky-img" />
                   xxx
                 </div>
               </div>
-              <ol className="blog-grid list">
+              <Masonry
+						breakpointCols={breakpointColumnsObj}
+						className="my-masonry-grid"
+						columnClassName="my-masonry-grid_column"
+					>
+              
                 {posts.map(post => (
                   <Blogcard post={post} />
                 ))}
-              </ol>
+              </Masonry>
               {/* <ol style={{ listStyle: `none` }}>
                  {posts.map(post => {
                      const title = post.frontmatter.title || post.fields.slug
