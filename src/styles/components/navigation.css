@@ -127,9 +127,7 @@ nav .nav-columns .nav-column .nav-links li a {
     justify-content: space-between;
   }
 
-  nav .nav-columns .nav-column .nav-infos .nav-info:nth-child(2) {
-    display: none;
-  }
+ 
   nav .nav-columns .nav-column .nav-infos .nav-info:nth-child(3) {
     display: none;
   }
